@@ -1,0 +1,116 @@
+:root{
+    
+    --fondo2: #FBECB2;
+    --claro: #4D4C7D;
+    --fondo: #363062;
+    --oscuro: #1f1b38;
+    --texto: #fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kosugi Maru", sans-serif;
+}
+
+body{
+    background: var(--fondo2);
+}
+
+.title h1{
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    background-color: var(--fondo);
+    padding: 2px;
+    font-family: "Bungee", sans-serif;
+}
+
+.container{
+    max-width: 600px;
+    margin: 50px auto;
+    background: var(--claro);
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.container input[type="text"]:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.container button{
+    padding: 10px;
+    border: 0.5px solid var(--fondo);
+    border-radius: 100px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: var(--texto);
+    font-weight: 550;
+    background-color: var(--fondo);
+    transition: transform 0.2s ease;
+}
+
+.container button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    align-items: center;
+}
+
+.container .btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+li{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Estilo básico del checkbox oculto */
+input[type="checkbox"] {
+    margin-right: 15px;
+}
+  
+  /* Estilo del círculo superpuesto sobre el checkbox */
+input[type="checkbox"]::before {
+    content: "";
+    position: relative;
+    width: 15px; /* Tamaño del círculo */
+    height: 15px; /* Tamaño del círculo */
+    border: none;
+    background-color: var(--fondo);
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 2.5px;
+}
+  
+  /* Estilo del círculo cuando el checkbox está marcado */
+input[type="checkbox"]:checked::before {
+    background-color: var(--oscuro); /* Cambia el color cuando está marcado */
+}
