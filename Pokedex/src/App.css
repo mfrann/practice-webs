@@ -1,0 +1,47 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width: auto;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    padding: 14px;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    width: 600px;
+    background: var(--bak_card);
+    color: #e7e7e7;
+}
+
+input:focus{
+    outline: none;
+    border-color: #131313;
+    box-shadow: 0 0 0 2px rgba(15, 15, 15, 0.25);
+}
+
+input::placeholder{
+    color: #ccccccd2;
+}
+
+@media (max-width: 600px) {
+    .main{
+        width: 100%;
+        overflow-x: hidden;
+
+    }
+
+    input{
+        width: 300px;
+        padding: 14px;
+    }
+}

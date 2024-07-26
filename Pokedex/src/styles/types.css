@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.container-types{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px; /* Añadido padding */
+    max-width: 60%; /* Ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+
+}
+
+.logo h1{
+    padding: 8px;
+    font-size: 25px;
+    font-family: "Quicksand", sans-serif;
+    padding-top: 0;
+}
+
+.logo span{
+    font-size: 32px;
+    font-family: "Quicksand", sans-serif;
+    color: var(--dragon-tp);
+}
+
+
+button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+button {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card-types{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.nav{
+    padding: 6px;
+    border-radius: 20px;
+    width: 75px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.tp-normal{
+    background: var(--normal-tp);
+    color: var(--black);
+}
+
+.tp-fire{
+    background: var(--fire-tp);
+    color: var(--black);
+}
+
+.tp-grass{
+    background: var(--grass-tp);
+    color: var(--black);
+}
+
+.tp-water{
+    background: var(--water-tp);
+    color: var(--white);
+}
+
+.tp-bug{
+    background: var(--bug-tp);
+    color: var(--black);
+}
+
+.tp-fairy{
+    background: var(--fairy-tp);
+    color: var(--black);
+}
+
+.tp-dragon{
+    background: var(--dragon-tp);
+    color: var(--white);
+}
+
+.tp-psychic{
+    background: var(--psychic-tp);
+    color: var(--black);
+}
+
+.tp-ghost{
+    background: var(--ghost-tp);
+    color: var(--white);
+}
+
+.tp-steel{
+    background: var(--steel-tp);
+    color: var(--black);
+}
+
+.tp-ground{
+    background: var(--ground-tp);
+    color: var(--black);
+}
+
+.tp-flying{
+    background: var(--flying-tp);
+    color: var(--black);
+}
+
+.tp-ice{
+    background: var(--ice-tp);
+    color: var(--black);
+}
+
+.tp-electric{
+    background: var(--electric-tp);
+    color: var(--black);
+}
+
+.tp-rock{
+    background: var(--rock-tp);
+    color: var(--black);
+}
+
+.tp-dark{
+    background: var(--dark-tp);
+    color: var(--white);
+}
+
+.tp-fighting{
+    background: var(--fighting-tp);
+    color: var(--white);
+}
+
+.tp-poison{
+    background: var(--poison-tp);
+    color: var(--white);
+}
+
+
