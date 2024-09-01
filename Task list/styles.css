@@ -1,116 +1,289 @@
-:root{
-    
-    --fondo2: #FBECB2;
-    --claro: #4D4C7D;
-    --fondo: #363062;
-    --oscuro: #1f1b38;
-    --texto: #fff;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rubik+Mono+One&display=swap");
+
+:root {
+  --fondo: #393646;
+  --in_wall: #4f4557;
+  --out_wall: #6d5d6e;
+  --white: #f4eee0;
+  --gray: #e6e0d3;
+  --hover: #18122b;
+  --hover2: #473e4e;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Kosugi Maru", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
 }
 
-body{
-    background: var(--fondo2);
+body {
+  background: var(--fondo);
 }
 
-.title h1{
-    text-align: center;
-    font-size: 50px;
-    color: #fff;
-    background-color: var(--fondo);
-    padding: 2px;
-    font-family: "Bungee", sans-serif;
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: var(--white);
 }
 
-.container{
-    max-width: 600px;
-    margin: 50px auto;
-    background: var(--claro);
-    padding: 20px;
-    border-radius: 40px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+header h1 {
+  margin-left: 1;
 }
 
-.container input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 100px;
-    box-sizing: border-box;
-    font-size: 16px;
-    margin-bottom: 15px;
+.title {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.container input[type="text"]:focus{
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
-.container button{
-    padding: 10px;
-    border: 0.5px solid var(--fondo);
-    border-radius: 100px;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: var(--texto);
-    font-weight: 550;
-    background-color: var(--fondo);
-    transition: transform 0.2s ease;
+.text-container button {
+  border: none;
+  background: none;
+  font-size: 20px;
 }
 
-.container button:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    align-items: center;
+.text-container button i {
+  transition: color 0.3s ease-in;
+  cursor: pointer;
 }
 
-.container .btn{
-    display: flex;
-    justify-content: space-between;
+.text-container button i:hover {
+  color: var(--hover);
 }
 
-ul{
-    list-style: none;
-    padding: 0;
-    color: #fff;
-    font-weight: 700;
+#myMenu {
+  position: absolute;
+  left: -320px;
+  transition: left 0.5s ease;
+  width: 100px;
+  padding: 20px;
+  background-color: aqua;
 }
 
-li{
-    padding: 10px;
-    display: flex;
-    align-items: center;
+.icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.icons-container i {
+  font-size: 20px;
 }
 
-li.completed {
-    text-decoration: line-through;
-    color: #999;
+.icons-container a {
+  text-decoration: none;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
 }
 
-/* Estilo básico del checkbox oculto */
+a:hover {
+  color: var(--hover);
+}
+
+#msg {
+  position: fixed;
+  bottom: 100px; /* Ajusta esta posición según tus necesidades */
+  left: 20px;
+  background-color: var(--in_wall);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000; /* Asegúrate de que el mensaje esté delante de otros elementos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#msg.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hidden {
+  display: flex;
+}
+
+/*BODY*/
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 595px;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 600px;
+  padding: 20px;
+}
+
+/*INPUT*/
+.input {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 60%;
+  margin-bottom: 0;
+}
+.input input[type="text"] {
+  width: 100%;
+  padding: 12px 40px 12px 25px; /*TOP, RIGHT, BOTTOM, LEFT*/
+  border: none;
+  background-color: var(--in_wall);
+  border-radius: 100px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.input input[type="text"]:focus {
+  padding-left: 25px;
+  outline: none;
+  color: var(--white);
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.input button {
+  position: absolute;
+  right: 10px;
+  padding: 8px 11px 8px 11px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--out_wall);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color 0.3s ease-in;
+}
+
+button i {
+  color: var(--white);
+}
+
+/*TASKS*/
+ul {
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  color: var(--white);
+  font-weight: 500;
+  width: 80%;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+ul::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: var(--in_wall);
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+ul::-webkit-scrollbar-track {
+  background-color: var(--out_wall);
+  border-radius: 10px;
+}
+
+/* Hover en el thumb */
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hover2);
+}
+
+li {
+  position: relative;
+  padding: 15px;
+  border-top: 1px solid #ffffff10;
+  border-bottom: 1px solid #ffffff10;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+li #myButton {
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  background-color: var(--fondo);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+li #myButton:hover {
+  background-color: var(--hover);
+}
+
 input[type="checkbox"] {
-    margin-right: 15px;
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  appearance: none;
 }
-  
-  /* Estilo del círculo superpuesto sobre el checkbox */
+
 input[type="checkbox"]::before {
-    content: "";
-    position: relative;
-    width: 15px; /* Tamaño del círculo */
-    height: 15px; /* Tamaño del círculo */
-    border: none;
-    background-color: var(--fondo);
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 2.5px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--out_wall);
+  background-color: var(--in_wall);
+  box-sizing: border-box;
 }
-  
-  /* Estilo del círculo cuando el checkbox está marcado */
-input[type="checkbox"]:checked::before {
-    background-color: var(--oscuro); /* Cambia el color cuando está marcado */
+
+footer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--gray);
+  padding: 2px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--gray);
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
 }

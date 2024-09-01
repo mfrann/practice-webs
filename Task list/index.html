@@ -1,35 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/cab5400957.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Gloria+Hallelujah&family=Kosugi+Maru&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-    <title>Task list</title> 
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/cab5400957.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Task list</title>
+  </head>
+  <body>
     <header class="title">
-        <h1> 📃 Task List 📃</h1>
+      <h1>Task List</h1>
+
+      <div class="icons-container">
+        <a href="https://github.com/mfrann" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://devfrann.netlify.app/"
+          ><i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+      </div>
     </header>
 
-    <section class="container">
-        <input type="text" id="nuevaTarea" placeholder="Add new task...">
-        <div class="btn">
-            <button onclick="agregarTarea()">Add</button>
-            <button onclick="borrarTareas()">Delete</button>
+    <!-- <section id="menu-container">
+      <div class="content">
+        <div class="content-1">
+          <p>Escribe tus tareas por hacer</p>
         </div>
-     
-        <ul id="tareas">
-            
-        </ul>
-    </section>
+        <div class="content-2">
+          <p>Marca las tareas completadas</p>
+        </div>
+        <div class="content-3">
+          <p>Mantente ordenado y al dia</p>
+        </div>
+      </div>
+    </section> -->
 
+    <div id="msg" class="hidden">1 task done!</div>
+
+    <section class="main">
+      <section class="container">
+        <audio id="sonidoCompletado" src="bubble.wav"></audio>
+        <ul id="tareas"></ul>
+        <div class="input">
+          <input type="text" id="nuevaTarea" placeholder="Add task" />
+          <button type="button" onclick="agregarTarea()">
+            <i class="fa-solid fa-arrow-up"></i>
+          </button>
+        </div>
+      </section>
+    </section>
+    <footer>
+      <p>created by<a href=""> @mfrann</a></p>
+    </footer>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
-
